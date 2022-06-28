@@ -4,7 +4,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 import StateD
-import environment as env
+import environment
+
+def training():
+
 
 if __name__ == '__main__':
     print(StateD.state.position)
