@@ -1,13 +1,13 @@
 import numpy as np
 from numpy.random import random
+import StateD
 
 
-def EnvironmentCreate():  # 初始化环境
+def EnvironmentCreate(E_0):  # 初始化环境
     size = 100
-    E_0 = 10
-    env = np.zeros([size, size])
-    for i in range(size):
-        for j in range(size):
+    env = np.zeros([StateD.constant.size, StateD.constant.size])
+    for i in range(StateD.constant.size):
+        for j in range(StateD.constant.size):
             env[i][j] = E_0 * random()
     return env
 
