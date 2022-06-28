@@ -11,3 +11,8 @@ class state:  # 初始化状态类
 
 class action:  # 初始化动作类
     move = np.zeros(2)
+    done = 0
+
+
+class qtable:
+    Qlearning = np.zeros([100, 100])  # 回报函数表
