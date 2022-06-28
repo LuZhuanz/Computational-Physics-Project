@@ -18,7 +18,7 @@ def EnvironmentStore(env):  # 保存环境
 
 def step(action, state):  # 按指令行动后反应，智能体与环境交互
     state.position = state.position + action
-    GrassEnergy = 0.1 * state.egrass(state.position)
+    GrassEnergy = 0.1 * state.egrass[state.position]
     TerrainEnergy = state.energy * state.eterrian
     state.energy = state.energy + GrassEnergy - TerrainEnergy
     state.egrass[state.position] = state.egrass[state.position] * 0.9

@@ -45,7 +45,8 @@ def whole_training(qtable):
 
 
 def updateq():
-    Qtable = StateD.qtable
+    Qtable = StateD.qtable.Qlearning
+    print(Qtable)
     for n in range(StateD.constant.Ntrain):
         Qtable = whole_training(Qtable)
         print(n)
