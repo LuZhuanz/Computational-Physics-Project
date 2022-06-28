@@ -9,4 +9,7 @@ import environment  # 环境操作模块
 import train  # 训练模块
 
 if __name__ == '__main__':
-    train.updateq()
+    # train.updateq()
+    Qtable = StateD.qtable
+    a=train.training(3,4,Qtable)
+    print(a)

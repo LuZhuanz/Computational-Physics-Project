@@ -16,7 +16,7 @@ def training(i, j, qtable):
     testate.Qlearning = qtable
     q_sum = 0
 
-    for i in range(StateD.constant.Ntrain):
+    for m in range(StateD.constant.Ntrain):
         ep_reward = 0
         q_count = 0
         q_state = 0
