@@ -16,7 +16,7 @@ def EnvironmentStore(env):  # 保存环境
     np.savetxt('environmentgrass.txt', env)
 
 
-def step(action, state):  # 按指令行动后反应
+def step(action, state):  # 按指令行动后反应，智能体与环境交互
     state.position = state.position + action.move
     GrassEnergy = 0.1 * state.egrass(state.position)
     TerrainEnergy = state.energy * state.eterrian
