@@ -13,4 +13,6 @@ def EnvironmentCreate():
 
 
 def EnvironmentStore(env):
-    np.savetxt('environment.txt', env)
+    np.savetxt('environmentgrass.txt', env)
+
+def step(action):
