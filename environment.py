@@ -2,7 +2,7 @@ import numpy as np
 from numpy.random import random
 
 
-def EnvironmentCreate():
+def EnvironmentCreate():  # 初始化环境
     size = 100
     E_0 = 10
     env = np.zeros([size, size])
@@ -12,7 +12,10 @@ def EnvironmentCreate():
     return env
 
 
-def EnvironmentStore(env):
+def EnvironmentStore(env):  # 保存环境
     np.savetxt('environmentgrass.txt', env)
 
-def step(action):
+
+def step(action, state):
+    state.position = state.position + action.move
+    return 0
