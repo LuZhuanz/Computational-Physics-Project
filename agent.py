@@ -149,3 +149,56 @@ def choose_action(state_e):  # 由Q表格选择策略,羊群策略记入action
                 action = [0, -1]
 
     return action
+
+
+def strategy(Qtable):
+    position = [int(StateD.constant.size / 2), int(StateD.constant.size / 2)]
+    pos_history = [position]
+    for i in range(StateD.constant.Ntrain):
+        if position[0] == 0:
+            if position[1] == 0:
+                qr = Qtable[1][0]
+                qu = Qtable[0][1]
+                ql = 0
+                qd = 0
+            elif position[1] == StateD.constant.size - 1:
+                qr = Qtable[1][StateD.constant.size - 1]
+                qd = Qtable[0][StateD.constant.size - 2]
+                ql = 0
+                qu = 0
+            else:
+                qr = Qtable[1][position[1]]
+                qu = Qtable[0][position[1] + 1]
+                qd = Qtable[0][position[1] - 1]
+                ql = 0
+        elif position[0] == StateD.constant.size - 1:
+            if position[1] == 0:
+                ql = Qtable[StateD.constant.size - 2][0]
+                qu = Qtable[StateD.constant.size - 1][1]
+                qr = 0
+                qd = 0
+            elif position[1] == StateD.constant.size - 1:
+                ql = Qtable[StateD.constant.size - 2][StateD.constant.size - 1]
+                qd = Qtable[StateD.constant.size - 1][StateD.constant.size - 2]
+                qr = 0
+                qu = 0
+            else:
+                ql = Qtable[StateD.constant.size - 2][position[1]]
+                qu = Qtable[StateD.constant.size - 1][position[1] + 1]
+                qd = Qtable[StateD.constant.size - 1][position[1] - 1]
+                ql = 0
+        else:
+            ql = Qtable[position[0] - 1][position[1]]
+            qr = Qtable[position[0] + 1][position[1]]
+            qu = Qtable[position[0]][position[1] + 1]
+            qd = Qtable[position[0]][position[1] - 1]
+        if ql == max(ql, qr, qu, qd):
+            position[0] = position[0] - 1
+        elif qr == max(ql, qr, qu, qd):
+            position[0] = position[0] + 1
+        elif qu == max(ql, qr, qu, qd):
+            position[1] = position[1] + 1
+        else:
+            position[1] = position[1] - 1
+        pos_history.append(position)
+        return pos_history
