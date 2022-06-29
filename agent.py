@@ -151,12 +151,12 @@ def choose_action(state_e):  # 由Q表格选择策略,羊群策略记入action
     return action
 
 
-def strategy(Qtable):
-    position = [int(StateD.constant.size / 2), int(StateD.constant.size / 2)]
+def strategy(Qtable):  # 根据学习得到的Q表格判断运动的最佳路线
+    position = [int(StateD.constant.size / 2), int(StateD.constant.size / 2)]  # 初始位置
     pos_history = [position]
     for i in range(StateD.constant.Ntrain):
         Qtable[position[0]][position[1]] = Qtable[position[0]][position[1]] - 1
-        if position[0] == 0:
+        if position[0] == 0:  # 考虑边界条件
             if position[1] == 0:
                 qr = Qtable[1][0]
                 qu = Qtable[0][1]
