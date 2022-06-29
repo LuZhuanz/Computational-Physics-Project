@@ -29,12 +29,14 @@ def training(i, j, qtable):
             q_count = q_count + 1
             q_add = np.power(StateD.constant.gamma, q_count) * reward
             q_state = q_state + q_add
-            #print(reward)
+            # print(reward)
 
             if q_add < 0.02:
                 break
         q_sum = q_sum + q_state
+        # print(m)
     q_solution = q_sum / StateD.constant.Ntrain
+
     return q_solution
 
 
@@ -49,7 +51,7 @@ def whole_training(qtable):
 
 def updateq():
     Qtable = StateD.qtable.Qlearning
-    print(Qtable)
+    # print(Qtable)
     for n in range(StateD.constant.Ntrain):
         Qtable = whole_training(Qtable)
         print(n)
