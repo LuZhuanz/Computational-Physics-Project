@@ -12,7 +12,7 @@ def training(i, j, qtable):
     N = StateD.constant.size
     testate = StateD.state  # 初始化智能体
     testate.position = [i, j]
-    testate.egrass = np.loadtxt("environmentgras.txt")
+    testate.egrass = np.loadtxt("environmentgrass.txt")
     testate.energy = StateD.constant.E_0
     testate.Qlearning = qtable
     ep_state = testate
@@ -29,7 +29,7 @@ def training(i, j, qtable):
             q_count = q_count + 1
             q_add = np.power(StateD.constant.gamma, q_count) * reward
             q_state = q_state + q_add
-            print(q_add)
+            #print(reward)
 
             if q_add < 0.02:
                 break
