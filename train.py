@@ -34,7 +34,7 @@ def training(i, j, qtable):
             if q_add < 0.02:
                 break
         q_sum = q_sum + q_state
-        # print(m)
+    print(m)
     q_solution = q_sum / StateD.constant.Ntrain
 
     return q_solution

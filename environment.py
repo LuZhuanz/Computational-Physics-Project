@@ -4,7 +4,7 @@ import StateD
 
 
 def EnvironmentCreate(E_0):  # 初始化环境
-    size = 100
+
     env = np.zeros([StateD.constant.size, StateD.constant.size])
     for i in range(StateD.constant.size):
         for j in range(StateD.constant.size):
