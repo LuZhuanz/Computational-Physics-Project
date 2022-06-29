@@ -12,8 +12,10 @@ def training(i, j, qtable):
     N = StateD.constant.size
     testate = StateD.state  # 初始化智能体
     testate.position = [i, j]
+    testate.egrass = np.loadtxt("environmentgras.txt")
     testate.energy = StateD.constant.E_0
     testate.Qlearning = qtable
+    ep_state = testate
     q_sum = 0
 
     for m in range(StateD.constant.Ntrain):
@@ -21,12 +23,13 @@ def training(i, j, qtable):
         q_count = 0
         q_state = 0
         while True:
-            ep_action = agent.choose_action(testate)
+            ep_action = agent.choose_action(ep_state)
             ep_state, reward = environment.step(ep_action, testate)
             ep_reward = ep_reward + reward
             q_count = q_count + 1
             q_add = np.power(StateD.constant.gamma, q_count) * reward
             q_state = q_state + q_add
+            print(q_add)
 
             if q_add < 0.02:
                 break
