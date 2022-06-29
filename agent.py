@@ -3,13 +3,13 @@ import StateD
 
 
 def choose_action(state_e):  # 由Q表格选择策略,羊群策略记入action
-    if state_e.position[0] == 0:
+    if state_e.position[0] == 0:  # 考虑边界上的情况
         if state_e.position[1] == 0:
             if state_e.Qlearning[0][1] == 0 and state_e.Qlearning[1][0] == 0:
                 split_1 = 0.5
             else:
                 split_1 = state_e.Qlearning[0][1] / (state_e.Qlearning[0][1] + state_e.Qlearning[1][0])
-            seed = np.random.random()
+            seed = np.random.random()  # 根据不同方向的奖励函数分配随机行走的概率权重，初始为完全随机
             if split_1 < seed:
                 action = [1, 0]
             else:
