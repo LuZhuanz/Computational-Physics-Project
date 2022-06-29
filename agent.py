@@ -202,5 +202,5 @@ def strategy(Qtable):
         else:
             position[1] = position[1] - 1
         pos_history.append(position)
-        # print(position)
+        print(position)
     return pos_history
