@@ -2,9 +2,9 @@ import numpy as np
 
 
 class constant:  # 程序常数
-    Ntrain = 20  # 蒙特卡洛游走次数
+    Ntrain = 100  # 蒙特卡洛游走次数
     gamma = 0.9  # 奖励衰减系数
-    size = 50  # 地图大小
+    size = 100  # 地图大小
     E_0 = 10  # 地图能量参数
 
 

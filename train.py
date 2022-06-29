@@ -55,4 +55,4 @@ def updateq():
     for n in range(StateD.constant.Ntrain):
         Qtable = whole_training(Qtable)
         print(n)
-    np.savetxt('Qtable.csv', Qtable, delimiter=",")
+    np.savetxt('Qtable_100_100.csv', Qtable, delimiter=",")
