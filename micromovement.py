@@ -89,7 +89,6 @@ for j in range(1, NT):
 for i in range(0, 75):
     print(sheepx[i, 9999])
 
-"""
 plt.ion()  # 开启交互模式
 plt.subplots()
 
@@ -97,28 +96,47 @@ for n in range(NT):
     plt.clf()  # 清空画布
     plt.xlim(0, 10)  # 因为清空了画布，所以要重新设置坐标轴的范围
     plt.ylim(0, 10)
-    plt.scatter(sheepx[:][n], sheepy[:][n])
+    plt.scatter(sheepx[0][n], sheepy[0][n], c='r')
+    plt.scatter(sheepx[1][n], sheepy[1][n], c='b')
+    plt.scatter(sheepx[2][n], sheepy[2][n], c='b')
+    plt.scatter(sheepx[3][n], sheepy[3][n], c='b')
+    plt.scatter(sheepx[4][n], sheepy[4][n], c='b')
+    plt.scatter(sheepx[5][n], sheepy[5][n], c='b')
+    plt.scatter(sheepx[6][n], sheepy[6][n], c='b')
+    plt.scatter(sheepx[7][n], sheepy[7][n], c='b')
+    plt.scatter(sheepx[8][n], sheepy[8][n], c='b')
+    plt.scatter(sheepx[9][n], sheepy[9][n], c='b')
+    plt.scatter(sheepx[10][n], sheepy[10][n], c='b')
+    plt.scatter(sheepx[11][n], sheepy[11][n], c='b')
+    plt.scatter(sheepx[12][n], sheepy[12][n], c='b')
+    plt.scatter(sheepx[13][n], sheepy[13][n], c='b')
+    plt.scatter(sheepx[14][n], sheepy[14][n], c='b')
+    plt.scatter(sheepx[15][n], sheepy[15][n], c='b')
+    plt.scatter(sheepx[16][n], sheepy[16][n], c='b')
+    plt.scatter(sheepx[17][n], sheepy[17][n], c='b')
+    plt.scatter(sheepx[18][n], sheepy[18][n], c='b')
+    plt.scatter(sheepx[19][n], sheepy[19][n], c='b')
+    plt.scatter(sheepx[20][n], sheepy[20][n], c='b')
+    plt.scatter(sheepx[21][n], sheepy[21][n], c='b')
+    plt.scatter(sheepx[22][n], sheepy[22][n], c='b')
+    plt.scatter(sheepx[23][n], sheepy[23][n], c='b')
+    plt.scatter(sheepx[24][n], sheepy[24][n], c='b')
+    plt.scatter(sheepx[25][n], sheepy[25][n], c='b')
+    plt.scatter(sheepx[26][n], sheepy[26][n], c='b')
+    plt.scatter(sheepx[27][n], sheepy[27][n], c='b')
+    plt.scatter(sheepx[28][n], sheepy[28][n], c='b')
+    plt.scatter(sheepx[29][n], sheepy[29][n], c='b')
+    plt.scatter(sheepx[30][n], sheepy[30][n], c='b')
+    plt.scatter(sheepx[31][n], sheepy[31][n], c='b')
+    plt.scatter(sheepx[32][n], sheepy[32][n], c='b')
+    plt.scatter(sheepx[33][n], sheepy[33][n], c='b')
+    plt.scatter(sheepx[34][n], sheepy[34][n], c='b')
+    plt.scatter(sheepx[35][n], sheepy[35][n], c='b')
+    plt.scatter(sheepx[36][n], sheepy[36][n], c='b')
+    plt.scatter(sheepx[37][n], sheepy[37][n], c='b')
+    plt.scatter(sheepx[38][n], sheepy[38][n], c='b')
+    plt.scatter(sheepx[39][n], sheepy[39][n], c='b')
+    plt.pause(2)
     plt.pause(0.2)
 plt.ioff()
-plt.show()
-"""
-fig = plt.figure()
-ax = fig.add_subplot(1, 1)
-
-# create the first plot
-point, = ax.plot([], [], 'r.')
-point2, = ax.plot([], [], '.')
-ax.set_xlim([0, 10])
-ax.set_ylim([0, 10])
-
-
-def update_point(n, x, y, point):
-    point2.set_data([x[0:n], y[0:n]])
-    point.set_data([x[n], y[n]])
-    # point.set_array([255,0,0])
-    return point
-
-
-ani = animation.FuncAnimation(fig, update_point, 99, fargs=(x, y, point))
-ani.save('test5.gif', writer='pillow')
 plt.show()

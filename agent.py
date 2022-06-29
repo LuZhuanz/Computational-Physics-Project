@@ -155,6 +155,7 @@ def strategy(Qtable):
     position = [int(StateD.constant.size / 2), int(StateD.constant.size / 2)]
     pos_history = [position]
     for i in range(StateD.constant.Ntrain):
+        Qtable[position[0]][position[1]] = Qtable[position[0]][position[1]] - 1
         if position[0] == 0:
             if position[1] == 0:
                 qr = Qtable[1][0]
@@ -201,4 +202,5 @@ def strategy(Qtable):
         else:
             position[1] = position[1] - 1
         pos_history.append(position)
-        return pos_history
+        # print(position)
+    return pos_history
