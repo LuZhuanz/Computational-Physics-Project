@@ -1,5 +1,6 @@
 import numpy as np
 
+# 声明程序中的一些常用变量/常量
 
 class constant:  # 程序常数
     Ntrain = 100  # 蒙特卡洛游走次数

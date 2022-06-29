@@ -1,6 +1,7 @@
 import numpy as np
 import StateD
 
+# 该模块主要描述策略的选择
 
 def choose_action(state_e):  # 由Q表格选择策略,羊群策略记入action
     if state_e.position[0] == 0:  # 考虑边界上的情况

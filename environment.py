@@ -2,6 +2,7 @@ import numpy as np
 from numpy.random import random
 import StateD
 
+# 该模块主要描述环境以及羊群与环境的交互
 
 def EnvironmentCreate(E_0):  # 初始化环境
 
