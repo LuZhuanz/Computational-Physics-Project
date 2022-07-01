@@ -7,6 +7,7 @@ import agent  # 智能体模块
 import StateD  # 类型声明
 import environment  # 环境操作模块
 
+
 # 训练羊群的决策模型
 
 def training(i, j, qtable):
@@ -56,4 +57,4 @@ def updateq():
     for n in range(StateD.constant.Ntrain):
         Qtable = whole_training(Qtable)
         print(n)
-    np.savetxt('Qtable_100_100.csv', Qtable, delimiter=",")
+    np.savetxt('Qtable_100_100_2.csv', Qtable, delimiter=",")
