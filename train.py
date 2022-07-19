@@ -36,7 +36,7 @@ def training(i, j, qtable):
             if q_add < 0.02:
                 break
         q_sum = q_sum + q_state
-    print(m)
+    #  print(m)
     q_solution = q_sum / StateD.constant.Ntrain
 
     return q_solution
@@ -56,5 +56,5 @@ def updateq():
     # print(Qtable)
     for n in range(StateD.constant.Ntrain):
         Qtable = whole_training(Qtable)
-        print(n)
-    np.savetxt('Qtable_100_100_2.csv', Qtable, delimiter=",")
+       # print(n)
+    np.savetxt('Qtable_100_100_3.csv', Qtable, delimiter=",")
